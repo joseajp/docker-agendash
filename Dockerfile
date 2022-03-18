@@ -2,9 +2,11 @@ FROM node:alpine
 
 LABEL maintainer="José Andrés Jarana <jose@syncrt.com>"
 
+WORKDIR /app
+
 RUN npm install agendash
 
-COPY app-entrypoint.sh /
+COPY app-entrypoint.sh /app/app-entrypoint.sh
 
 ENV MONGODB_HOST="localhost" \
     MONGODB_PORT="27017" \
